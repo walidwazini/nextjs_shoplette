@@ -1,17 +1,62 @@
-export const dummy_shops = [
+const dummy_shops = [
   {
-    id: 'sh-1',
-    name:'Hat n Stick',
-    owner:null,
+    name: 'Hat n Stick',
+    products: [
+      {
+        id: 'kx-asdsad',
+        name: 'Shellcapped Food Container (20pcs)',
+        category: ['home', 'business', 'utility'],
+        price: 5.40,
+        countInStock: 30,
+        shop: null,
+      },
+      {
+        id: 'kj-1',
+        name: 'Glass Candle (3x)',
+        category: ['home', 'accessories'],
+        price: 13.60,
+        countInStock: 31,
+        shop: null,
+      },
+    ],
+    owner: null,
   },
   {
-    id: 'sh-2',
-    name:'Lilycove Store',
-    owner:null,
+    name: 'Lilycove Store',
+    products: [],
+    owner: null,
   },
   {
-    id: 'sh-3',
-    name:'Stalex',
-    owner:null,
+    name: 'Stalex',
+    products: [
+      {
+        slug: 'gst-hdie',
+        name: 'Ghost Hoodie',
+        category: ['men', 'apparel'],
+        variant: [
+          {
+            color: 'red',
+            size: 'M',
+            price: 120,
+            countInStock: 20,
+          },
+          {
+            color: 'blue',
+            size: 'M',
+            price: 120,
+            countInStock: 22,
+          },
+          {
+            color: 'blue',
+            size: 'L',
+            price: 120,
+            countInStock: 17,
+          },
+        ],
+      },
+    ],
+    owner: null,
   },
 ]
+
+module.exports = dummy_shops

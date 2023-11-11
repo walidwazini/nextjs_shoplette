@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const dotenv = require('dotenv')
+const dataImport = require('./data-import')
 
 dotenv.config()
 
@@ -25,3 +26,5 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api',(req,res) => res.json({message: 'Welcome to Shoplette API.'}))
+
+app.use('/api/import',dataImport)

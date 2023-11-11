@@ -1,4 +1,4 @@
-export const dummy_products = [
+const dummy_products = [
   {
     id:'kx-asdsad',
     name: 'Shellcapped Food Container (20pcs)',
@@ -24,3 +24,5 @@ export const dummy_products = [
     shop: null,
   },
 ]
+
+module.exports = dummy_products
