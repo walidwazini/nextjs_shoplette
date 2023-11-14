@@ -11,6 +11,9 @@ const Navbar = () => {
         <Link href={'/profile'} >Profile</Link>
       </div>
       <div className='hover:underline text-lg ' >
+        <Link href={'/signup'} >Signup</Link>
+      </div>
+      <div className='hover:underline text-lg ' >
         <Link href={'/login'} >Login</Link>
       </div>
     </div>

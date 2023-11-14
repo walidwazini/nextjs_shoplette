@@ -7,7 +7,9 @@ const Login = async () => {
 
   console.log(result)
   return (
-    <div>Login</div>
+    <div>
+      login
+    </div>
   )
 }
 
