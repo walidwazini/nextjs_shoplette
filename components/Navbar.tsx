@@ -8,6 +8,9 @@ const Navbar = () => {
         <Link href={'/'} >Home</Link>
       </div>
       <div className='hover:underline text-lg ' >
+        <Link href={'/profile'} >Profile</Link>
+      </div>
+      <div className='hover:underline text-lg ' >
         <Link href={'/login'} >Login</Link>
       </div>
     </div>

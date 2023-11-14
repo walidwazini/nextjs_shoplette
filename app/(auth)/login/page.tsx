@@ -1,6 +1,6 @@
 import React from 'react'
-import { connectDatabase } from '@/server/mongoose'
 
+import { connectDatabase } from '@/server/mongoose'
 
 const Login = async () => {
   const result = await connectDatabase()
