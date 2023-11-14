@@ -1,6 +1,12 @@
 import React from 'react'
 
-const Home = () => {
+import { connectDatabase } from '@/server/mongoose'
+
+const Home = async () => {
+  const result = await connectDatabase()
+
+  console.log(result)
+  
   return (
     <div>Home</div>
   )
