@@ -4,6 +4,10 @@ import GoogleProvider from 'next-auth/providers/google'
 import { NextResponse } from 'next/server'
 
 const handler = NextAuth({
+    pages: {
+        // ? We specific signIn page for callback after signOut
+        signIn: '/sign-in'
+    },
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID as string,
