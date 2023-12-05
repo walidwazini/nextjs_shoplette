@@ -8,7 +8,7 @@ const Home = () => {
 
   const session = useSession()
 
-  console.log(session)
+  // console.log(session)
 
   return (
     <div>
