@@ -3,9 +3,11 @@
 import bcrypt from 'bcrypt'
 import { redirect } from 'next/navigation'
 import { revalidatePath } from 'next/cache'
-import User from '@/database/account.model'
+import User from '@/model/user.model'
 
 import { connectDatabase } from '../mongoose'
+
+// TODO : this is just a trial for signup process might delete later
 
 export const userSignUp = async (formData: any) => {
   const { email, password } = Object.fromEntries(formData)
@@ -33,3 +35,13 @@ export const userSignUp = async (formData: any) => {
   revalidatePath('/')
   redirect('/')
 }
+
+// export const userAuthenticate = async (prevState, formData) => {
+//   const { username, password } = Object.fromEntries(formData)
+
+//   try {
+//     await 
+//   } catch (error) {
+    
+//   }
+// }

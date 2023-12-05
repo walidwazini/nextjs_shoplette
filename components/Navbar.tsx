@@ -14,7 +14,7 @@ const Navbar = () => {
         <Link href={'/signup'} >Signup</Link>
       </div>
       <div className='hover:underline text-lg ' >
-        <Link href={'/login'} >Login</Link>
+        <Link href={'/sign-in'} >Login</Link>
       </div>
     </div>
   )
