@@ -1,21 +1,25 @@
 import { Schema, models, model, Document } from 'mongoose';
 
 export interface IUser extends Document {
-  name: string;
-  username: string;
-  email: string;
+  name?: string;
+  username?: string;
+  email?: string;
   password?: string;
+  image?: string
   isSeller: boolean
+  provider: string
 }
 
 const UserScehma = new Schema({
-  name: { type: String, required: true },
-  username: { type: String, required: true, unique: true },
-  email: { type: String, required: true, unique: true },
+  name: { type: String },
+  username: { type: String, unique: true },
+  email: { type: String, unique: true },
   password: { type: String },
-  isSeller: { type: Boolean, default: false }
-})
+  image: { type: String },
+  isSeller: { type: Boolean, default: false },
+  provider: { type: String, default: 'credentials' }
+}, { timestamps: true })
 
-const User = models.User || model('User', UserScehma)
+const User = models.user || model('user', UserScehma)
 
 export default User 

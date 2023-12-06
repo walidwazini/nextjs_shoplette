@@ -7,6 +7,7 @@ import SignoutBtn from './SignoutBtn'
 const Navbar = async () => {
   const session = await getServerSession()
 
+  console.log('Session in Navbar')
   console.log(session?.user)
 
   return (
