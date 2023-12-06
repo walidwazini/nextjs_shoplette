@@ -7,8 +7,8 @@ import SignoutBtn from './SignoutBtn'
 const Navbar = async () => {
   const session = await getServerSession()
 
-  console.log('Session in Navbar')
-  console.log(session?.user)
+  // console.log('Session in Navbar')
+  // console.log(session?.user)
 
   return (
     <div className='w-full h-20 bg-red-800 flex justify-center items-center gap-1 ' >
