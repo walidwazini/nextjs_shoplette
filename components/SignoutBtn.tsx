@@ -1,15 +1,21 @@
 "use client"
 import React from 'react'
+import { RiLogoutCircleLine } from "react-icons/ri";
 
-import { signOut } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 
 const SignoutBtn = () => {
+  const session = useSession()
+
+  console.log(session)
+
   return (
     <button
       onClick={() => signOut()}
-      className='px-2 py-1 rounded-md bg-white text-black text-xs'
+      className='px-1 py-0.5 flex items-center gap-0.5 rounded-md bg-white text-black text-xs'
     >
-      Sign Out
+      <RiLogoutCircleLine />
+      <p>Sign Out</p>
     </button>
   )
 }
