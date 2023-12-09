@@ -6,19 +6,19 @@ import { IoPerson } from "react-icons/io5";
 import { RiLoginCircleFill } from "react-icons/ri";
 
 import SignoutBtn from './SignoutBtn'
+import { authOptions } from '@/utils/auth';
 
 const Navbar = async () => {
-  const session = await getServerSession()
+  const session = await getServerSession(authOptions)
 
-  console.log('Session in Navbar')
-  console.log(session)
+  console.log({ sessionNavbar: session })
 
   return (
     <div className='w-full h-36 bg-red-800 flex flex-col justify-center items-center gap-1 ' >
       <div className='basis-1/4 px-8 w-full flex justify-between items-center' >
         <div>Other Links</div>
         {/* TODO will be turn into dropdown link */}
-        <div className='w-64 gap-2 flex justify-between items-center text-sm ' >
+        <div className='w-[20rem] gap-2 flex justify-between items-center text-sm ' >
           {!session?.user && (
             <Link
               className='hover:underline flex items-center gap-1 '
@@ -29,13 +29,15 @@ const Navbar = async () => {
           )}
           {session?.user && (
             <>
-              <div className='flex items-center gap-0.5 hover:cursor-pointer ' >
+              <div className='flex items-center gap-0.5 hover:cursor-pointer hover:underline ' >
                 <FaBell size={15} />
                 <p className='' >Notifications</p>
               </div>
-              <div className='flex justify-between items-center gap-0.5 hover:cursor-pointer' >
+              <div className='flex justify-between items-center gap-0.5 hover:cursor-pointer hover:underline' >
                 <IoPerson size={15} />
-                <p>Profile</p>
+                <p>
+                  {session?.user?.username === '' || !session?.user?.username ? 'Profile' : session?.user?.username}
+                </p>
               </div>
               <SignoutBtn />
             </>
@@ -60,7 +62,6 @@ const Navbar = async () => {
         </div>
         <div className="basis-1/6 flex items-center justify-center ">
           <FaShoppingCart className="h-12 w-12 " />
-          {/* <MdShoppingCart /> */}
         </div>
       </div>
     </div>

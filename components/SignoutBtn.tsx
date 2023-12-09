@@ -1,4 +1,5 @@
 "use client"
+
 import React from 'react'
 import { RiLogoutCircleLine } from "react-icons/ri";
 
@@ -6,8 +7,6 @@ import { signOut, useSession } from 'next-auth/react'
 
 const SignoutBtn = () => {
   const session = useSession()
-
-  console.log(session)
 
   return (
     <button
