@@ -36,6 +36,20 @@ export const userSignUp = async (formData: any) => {
   redirect('/')
 }
 
+export const getUserDetails = async (id: string) => {
+  try {
+    connectDatabase()
+
+    const onlineUser = await User.findById(id).select('-password')
+
+    if (!onlineUser) throw new Error('User not found.')
+
+    return onlineUser
+  } catch (error) {
+    throw error
+  }
+}
+
 // export const userAuthenticate = async (prevState, formData) => {
 //   const { username, password } = Object.fromEntries(formData)
 

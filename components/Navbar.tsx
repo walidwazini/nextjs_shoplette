@@ -10,8 +10,7 @@ import { authOptions } from '@/utils/auth';
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions)
-
-  console.log({ sessionNavbar: session })
+  // const { user } = session
 
   return (
     <div className='w-full h-36 bg-red-800 flex flex-col justify-center items-center gap-1 ' >
@@ -33,12 +32,12 @@ const Navbar = async () => {
                 <FaBell size={15} />
                 <p className='' >Notifications</p>
               </div>
-              <div className='flex justify-between items-center gap-0.5 hover:cursor-pointer hover:underline' >
+              <Link href={`/profile/${session?.user._id}`} className='flex justify-between items-center gap-0.5 hover:cursor-pointer hover:underline' >
                 <IoPerson size={15} />
                 <p>
                   {session?.user?.username === '' || !session?.user?.username ? 'Profile' : session?.user?.username}
                 </p>
-              </div>
+              </Link>
               <SignoutBtn />
             </>
           )}

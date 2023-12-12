@@ -21,6 +21,6 @@ const ShopScehma = new Schema({
   image: { type: String },
 }, { timestamps: true })
 
-const Shop = models.user || model('shop', ShopScehma)
+const Shop = models.user || model('Shop', ShopScehma)
 
 export default Shop

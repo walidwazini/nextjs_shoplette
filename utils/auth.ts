@@ -2,7 +2,7 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 import GoogleProvider from 'next-auth/providers/google'
 
 import { connectDatabase } from '@/server/mongoose'
-import User from '@/model/user.model'
+import { User } from '@/server/model'
 import { getServerSession } from 'next-auth'
 
 export const authOptions = {
@@ -59,6 +59,7 @@ const syncWithMongoose = async ({ account, profile }: { account: any, profile: a
         name: profile.name,
         email: profile.email,
         username: '',
+        password: '',
         image: profile.picture,
         provider: account.provider
       })

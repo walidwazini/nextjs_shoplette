@@ -43,6 +43,6 @@ const UserScehma = new Schema({
   provider: { type: String, default: 'credentials' }
 }, { timestamps: true })
 
-const User = models.user || model('user', UserScehma)
+const User = models.user || model('User', UserScehma)
 
 export default User 
