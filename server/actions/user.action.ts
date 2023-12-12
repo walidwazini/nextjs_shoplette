@@ -3,7 +3,7 @@
 import bcrypt from 'bcrypt'
 import { redirect } from 'next/navigation'
 import { revalidatePath } from 'next/cache'
-import User from '@/model/user.model'
+import User from '../model/user.model'
 
 import { connectDatabase } from '../mongoose'
 
