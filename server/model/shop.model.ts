@@ -6,7 +6,7 @@ export interface IShop extends Document {
   products: Schema.Types.ObjectId[],
 }
 
-const ShopScehma = new Schema({
+const ShopSchema = new Schema({
   name: { type: String, unique: true },
   owner: {
     type: Schema.Types.ObjectId,
@@ -21,6 +21,6 @@ const ShopScehma = new Schema({
   image: { type: String },
 }, { timestamps: true })
 
-const Shop = models.user || model('Shop', ShopScehma)
+const Shop = models.Shop || model('Shop', ShopSchema)
 
 export default Shop

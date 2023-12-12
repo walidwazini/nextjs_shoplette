@@ -12,18 +12,18 @@ export interface IUser extends Document {
 
 const addressSchema = new Schema({
   title: { type: String },
-  phoneNumber: { type: String },
-  state: { type: String, },
-  postalCode: { type: Number },
-  unitNo: { type: String },
-  streetName1: { type: String },
-  streetName2: { type: String },
-  label: { type: String },
+  phoneNumber: { type: String, require: true, default: '' },
+  state: { type: String, require: true, default: '' },
+  postalCode: { type: Number, require: true, default: 0 },
+  unitNo: { type: String, require: true, default: '' },
+  streetName1: { type: String, require: true, default: '' },
+  streetName2: { type: String, require: true, default: '' },
+  label: { type: String, require: true, default: '' },
   isDefault: { type: Boolean, default: false },
 }, { timestamps: true })
 
 
-const UserScehma = new Schema({
+const UserSchema = new Schema({
   name: { type: String },
   username: { type: String, unique: true },
   email: { type: String, unique: true },
@@ -43,6 +43,6 @@ const UserScehma = new Schema({
   provider: { type: String, default: 'credentials' }
 }, { timestamps: true })
 
-const User = models.user || model('User', UserScehma)
+const User = models.User || model('User', UserSchema)
 
 export default User 

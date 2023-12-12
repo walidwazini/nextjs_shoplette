@@ -51,13 +51,25 @@ export const getUserDetails = async (id: string) => {
 }
 
 export const addAddress = async () => {
-  const demoId = '6577df73fa7d3486344123a2'
+  const demoId = '65781962b153a6c88c7bc31f'
   try {
     connectDatabase()
     
     const onlineUser = await User.findById(demoId).select('-password')
 
-    console.log(onlineUser)
+    const newAddress = {
+      title: 'home',
+      state: 'Selangor',
+      label:'Home',
+    }
+
+    onlineUser.addresses.push(newAddress)
+
+    await onlineUser.save()
+
+    console.log(onlineUser.addresses)
+    
+    return onlineUser.addresses
 
   } catch (error) {
     throw error
