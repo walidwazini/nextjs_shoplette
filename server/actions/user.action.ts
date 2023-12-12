@@ -50,6 +50,20 @@ export const getUserDetails = async (id: string) => {
   }
 }
 
+export const addAddress = async () => {
+  const demoId = '6577df73fa7d3486344123a2'
+  try {
+    connectDatabase()
+    
+    const onlineUser = await User.findById(demoId).select('-password')
+
+    console.log(onlineUser)
+
+  } catch (error) {
+    throw error
+  }
+}
+
 // export const userAuthenticate = async (prevState, formData) => {
 //   const { username, password } = Object.fromEntries(formData)
 
