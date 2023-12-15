@@ -1,6 +1,9 @@
-import { getUserDetails } from '@/server/actions/user.action'
-import Link from 'next/link'
 import React from 'react'
+import { getServerSession } from 'next-auth'
+import Link from 'next/link'
+
+import { authOptions } from '@/utils/auth'
+import { getUserDetails } from '@/server/actions/user.action'
 
 interface ProfilePageProps {
   params: { id: string }
@@ -8,9 +11,12 @@ interface ProfilePageProps {
 
 const ProfilePage = async ({ params }: ProfilePageProps) => {
 
-  const user = await getUserDetails(params.id)
+  const session = await getServerSession(authOptions)
+
+  const user = await getUserDetails(session.user._id)
 
   console.log(user)
+
   return (
     <div className='flex justify-around items-center ' >
       <div className='flex flex-col justify-center items-center gap-2' >
@@ -20,7 +26,7 @@ const ProfilePage = async ({ params }: ProfilePageProps) => {
           {user?.name}
         </div>
       </div>
-      <Link href={`/profile/${params.id}/address`} className='p-2 bg-amber-600 rounded-sm' >Add Address</Link>
+      <Link href={`/profile/address`} className='p-2 bg-amber-600 rounded-sm' >Add Address</Link>
     </div>
   )
 }

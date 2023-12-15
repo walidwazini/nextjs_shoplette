@@ -32,7 +32,7 @@ const Navbar = async () => {
                 <FaBell size={15} />
                 <p className='' >Notifications</p>
               </div>
-              <Link href={`/profile/${session?.user._id}`} className='flex justify-between items-center gap-0.5 hover:cursor-pointer hover:underline' >
+              <Link href={`/account/`} className='flex justify-between items-center gap-0.5 hover:cursor-pointer hover:underline' >
                 <IoPerson size={15} />
                 <p>
                   {session?.user?.username === '' || !session?.user?.username ? 'Profile' : session?.user?.username}
@@ -45,7 +45,7 @@ const Navbar = async () => {
       </div>
       <div className='basis-3/4 w-full h-full flex justify-center items-center gap-3 text-sm' >
         <div className="basis-1/6  h-full flex items-center justify-center ">
-          <Link href={'/home'} className='text-4xl italic font-bold' >
+          <Link href={'/'} className='text-4xl italic font-bold' >
             Shoplette
           </Link>
         </div>
