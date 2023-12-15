@@ -32,7 +32,7 @@ const Navbar = async () => {
                 <FaBell size={15} />
                 <p className='' >Notifications</p>
               </div>
-              <Link href={`/account/`} className='flex justify-between items-center gap-0.5 hover:cursor-pointer hover:underline' >
+              <Link href={`/user/account/profile`} className='flex justify-between items-center gap-0.5 hover:cursor-pointer hover:underline' >
                 <IoPerson size={15} />
                 <p>
                   {session?.user?.username === '' || !session?.user?.username ? 'Profile' : session?.user?.username}
