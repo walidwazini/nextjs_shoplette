@@ -13,7 +13,7 @@ const Navbar = async () => {
   // const { user } = session
 
   return (
-    <div className='w-full h-36 bg-red-800 flex flex-col justify-center items-center gap-1 ' >
+    <div className='w-full h-36 bg-[#b51818] flex flex-col justify-center items-center gap-1 ' >
       <div className='basis-1/4 px-8 w-full flex justify-between items-center' >
         <div>Other Links</div>
         {/* TODO will be turn into dropdown link */}

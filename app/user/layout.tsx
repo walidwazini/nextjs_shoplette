@@ -13,11 +13,11 @@ const UserLayout = async ({ children }: { children: React.ReactNode }) => {
 
 
   return (
-    <div className='flex p-2 min-h-screen' >
-      <div className='basis-1/5 bg-transparent flex flex-col' >
+    <div className='flex py-6 px-8 min-h-screen  ' >
+      <div className='basis-1/5 bg-transparent flex flex-col border-blue-400 border ' >
         <Sidebar />
       </div>
-      <div className='basis-4/5' >
+      <div className='basis-4/5 border-green-400 border ' >
         {children}
       </div>
     </div>
