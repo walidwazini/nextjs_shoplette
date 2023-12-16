@@ -9,15 +9,16 @@ import Sidebar from '@/components/user/Sidebar'
 // TODO finalize UI
 
 const UserLayout = async ({ children }: { children: React.ReactNode }) => {
-  const session = await getServerSession(authOptions)
+  const { user } = await getServerSession(authOptions)
 
+  console.log(user)
 
   return (
     <div className='flex py-6 px-8 min-h-screen  ' >
-      <div className='basis-1/5 bg-transparent flex flex-col border-blue-400 border ' >
-        <Sidebar />
+      <div className='basis-[30%] bg-transparent flex flex-col ' >
+        <Sidebar name={user?.name} username={user?.username} email={user?.email} image={user?.image} />
       </div>
-      <div className='basis-4/5 border-green-400 border ' >
+      <div className='basis-[70%] border-green-400 border ' >
         {children}
       </div>
     </div>
