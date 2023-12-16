@@ -14,11 +14,11 @@ const UserLayout = async ({ children }: { children: React.ReactNode }) => {
   console.log(user)
 
   return (
-    <div className='flex py-6 px-8 min-h-screen  ' >
-      <div className='basis-[30%] bg-transparent flex flex-col ' >
+    <div className='flex py-6 lg:px-8 px-4 min-h-screen  ' >
+      <div className='basis-[20%] lg:basis-1/5 bg-transparent flex flex-col ' >
         <Sidebar name={user?.name} username={user?.username} email={user?.email} image={user?.image} />
       </div>
-      <div className='basis-[70%] border-green-400 border ' >
+      <div className='basis-[70%] lg:basis-4/5 ' >
         {children}
       </div>
     </div>
